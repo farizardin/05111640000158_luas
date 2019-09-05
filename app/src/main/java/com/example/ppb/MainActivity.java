@@ -30,13 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 String panjang = edtPanjang.getText().toString().trim();
                 String lebar = edtLebar.getText().toString().trim();
 
-                if(panjang == "" || lebar == ""){
-                    txtLuas.setText("Luas Dan Panjang Harus Diisi");
-                }else{
+
+                try{
                     double p = Double.parseDouble(panjang);
                     double l = Double.parseDouble(lebar);
                     double luas = p * l;
                     txtLuas.setText("Luas : "+ luas);
+                }catch (Exception e){
+                    txtLuas.setText("Luas Dan Panjang Harus Diisi");
                 }
             }
         });
